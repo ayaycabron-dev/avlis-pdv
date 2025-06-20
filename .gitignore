@@ -1,0 +1,21 @@
+# Ignorar arquivos de ambiente com credenciais sensíveis
+.env
+
+# Ignorar diretórios e arquivos gerados pelo Node.js e React
+frontend/node_modules/
+frontend/.env.local # Variáveis de ambiente locais para o ambiente React (se você usar)
+frontend/npm-debug.log* # Logs de depuração do npm
+frontend/yarn-debug.log* # Logs de depuração do yarn
+frontend/yarn-error.log* # Logs de erro do yarn
+
+# Ignorar ambiente virtual Python e arquivos de cache
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+backend/download_log.txt # Opcional: Se você não quiser rastrear os logs de download no Git
+.ipynb_checkpoints/ # Para notebooks Jupyter, se usar (comum em projetos Python)
+*.log # Ignora quaisquer outros arquivos .log
+
+# Ignorar arquivos específicos do sistema operacional
+.DS_Store # macOS
+Thumbs.db # Windows
