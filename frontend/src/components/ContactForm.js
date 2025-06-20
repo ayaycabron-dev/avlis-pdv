@@ -17,8 +17,12 @@ const ContactForm = () => {
     e.preventDefault();
     setStatus('loading');
     try {
-      // Ajuste a URL para o seu backend Flask
-      const response = await axios.post('http://127.0.0.1:5000/api/contact', formData);
+      // Usando a variável de ambiente REACT_APP_API_URL
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://127.0.0.1:5000'; // URL local por padrão
+
+      // Envia o formulário para o backend
+      const response = await axios.post(`${apiUrl}/api/contact`, formData);
+
       if (response.status === 200) {
         setStatus('success');
         setFormData({ name: '', email: '', message: '' }); // Limpa o formulário
