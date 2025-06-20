@@ -18,7 +18,7 @@ const ContactForm = () => {
     setStatus('loading');
     try {
       // Ajuste a URL para o seu backend Flask
-      const response = await axios.post('http://127.0.0.1:5000/api/contact', formData);
+      const response = await axios.post('https://avlis-pdv.onrender.com/api/contact', formData);
       if (response.status === 200) {
         setStatus('success');
         setFormData({ name: '', email: '', message: '' }); // Limpa o formulário
