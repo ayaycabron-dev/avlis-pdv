@@ -5,7 +5,7 @@ const DownloadSection = () => {
   const handleDownload = (platform) => {
     // ESTA É A LINHA QUE PRECISA SER ATIVADA/VERIFICADA
     // Ela direciona o navegador para a rota de download no seu backend Flask
-    window.location.href = `http://127.0.0.1:5000/api/download?platform=${platform}`;
+    window.location.href = `https://avlis-pdv.onrender.com/api/download?platform=${platform}`;
 
     // A linha abaixo é a que exibe a mensagem que você está vendo.
     // Ela deve ser REMOVIDA ou COMENTADA depois que a linha acima for ativada.
