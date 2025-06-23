@@ -3,15 +3,13 @@ import { FaWindows, FaApple, FaLinux } from 'react-icons/fa';
 
 const DownloadSection = () => {
   const handleDownload = (platform) => {
-    // ESTA É A LINHA QUE PRECISA SER ATIVADA/VERIFICADA
-    // Ela direciona o navegador para a rota de download no seu backend Flask
-    window.location.href = `https://avlis-pdv.onrender.com/api/download?platform=${platform}`;
-
-    // A linha abaixo é a que exibe a mensagem que você está vendo.
-    // Ela deve ser REMOVIDA ou COMENTADA depois que a linha acima for ativada.
-    // alert(`Iniciando download para ${platform}. (Funcionalidade de download será implementada no backend)`);
-
-    // Em um ambiente real, o backend Flask responderia com o arquivo
+    if (platform === 'windows') {
+      window.location.href = 'https://github.com/ayaycabron-dev/avlis-pdv/releases/download/v1.0.0/Avlis.-.PDV.Setup.0.1.0.exe';
+    } else if (platform === 'mac') {
+      window.location.href = 'https://github.com/ayaycabron-dev/avlis-pdv/releases/download/v1.0.0/avlis-macos.dmg'; // Substitua pelo link real
+    } else if (platform === 'linux') {
+      window.location.href = 'https://github.com/ayaycabron-dev/avlis-pdv/releases/download/v1.0.0/avlis-linux.AppImage'; // Substitua pelo link real
+    }
   };
 
   return (
@@ -45,7 +43,6 @@ const DownloadSection = () => {
   );
 };
 
-// Styles for Download Section
 const downloadSectionStyle = {
   backgroundColor: 'var(--background-light)',
 };
@@ -67,11 +64,6 @@ const downloadCardStyle = {
   textAlign: 'center',
   cursor: 'pointer',
   transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-};
-
-downloadCardStyle[':hover'] = {
-  transform: 'translateY(-5px)',
-  boxShadow: '0 6px 20px rgba(0,0,0,0.12)',
 };
 
 export default DownloadSection;
